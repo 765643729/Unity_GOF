@@ -20,7 +20,7 @@ namespace Assets.script.command
         {
             GameActor actor = new GameActor()
             {
-                Name = "Íæ¼Ò"
+                Name = "çŽ©å®¶"
             };
             if (Input.GetKeyDown(KeyCode.J))
             {
