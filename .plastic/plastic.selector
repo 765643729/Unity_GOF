@@ -1,0 +1,4 @@
+repository "Unity_GOF@ssl://waste-dog@sh03-plasticscm.unity.cn:8787"
+  path "/"
+    smartbranch "/main/765643729" 
+     
