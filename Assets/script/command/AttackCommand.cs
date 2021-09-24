@@ -7,17 +7,26 @@ using UnityEngine;
 
 namespace Assets.script.command
 {
-    class AttackCommand : ICommand
-    {
-        public void Execute()
-        {
-        }
+	class AttackCommand : ICommand
+	{
+		private GameActor _actor;
 
-        public void Execute(GameActor actor)
-        {
+		public AttackCommand(GameActor actor)
+		{
+			_actor = actor;
+		}
 
-            Debug.Log(actor.Name + " 攻击一下");
+		public void Execute()
+		{
 
-        }
-    }
+			Debug.Log(_actor.Name + " 攻击一下");
+
+		}
+
+
+		public void Undo()
+		{
+			Debug.Log(_actor.Name + " 撤销攻击");
+		}
+	}
 }

@@ -7,23 +7,28 @@ using UnityEngine;
 
 namespace Assets.script.command
 {
-	class DefenceCommand : ICommand
+	class MoveUnitCommand : ICommand
 	{
 		private GameActor _actor;
 
-		public DefenceCommand(GameActor actor)
+		private int _xOffset;
+		private int _yOffset;
+
+		public MoveUnitCommand(GameActor actor, int xOffset, int yOffset)
 		{
 			_actor = actor;
+			_xOffset = xOffset;
+			_yOffset = yOffset;
 		}
 
 		public void Execute()
 		{
-			Debug.Log(_actor.Name + " 防御一下");
+			_actor.MoveTo(_xOffset, _yOffset);
 		}
 
 		public void Undo()
 		{
-			Debug.Log(_actor.Name + " 撤销防御");
+			_actor.MoveTo(-_xOffset, -_yOffset);
 		}
 	}
 }
